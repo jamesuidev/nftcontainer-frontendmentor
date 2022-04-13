@@ -1,0 +1,130 @@
+$paragraph: 1.7rem;
+$head-color: hsl(178, 100%, 50%);
+$content-color: hsl(215, 51%, 70%);
+$bg-main: hsl(217, 54%, 11%);
+$bg-card: hsl(216, 50%, 16%);
+$line-color: hsl(215, 32%, 27%);
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "global";
+
+main {
+  @include flex(center, center, column);
+  background: $bg-main;
+  min-height: 100vh;
+}
+.nftcontainer {
+  background: $bg-card;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+  padding-right: 3rem;
+  border-radius: 1rem;
+
+  @include flex(center, center, column);
+
+  box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.1),
+    0px 20px 20px rgba($color: #000000, $alpha: 0.1);
+}
+
+.main-image {
+  position: relative;
+
+  &:hover .overlay {
+    opacity: 50%;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+  }
+}
+.overlay {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 1rem;
+
+  position: absolute;
+  top: 0;
+  opacity: 0;
+
+  @include flex(center, center, column);
+
+  background: hsl(178, 100%, 50%);
+}
+.equilibrium {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 1rem;
+}
+.text {
+  width: 25rem;
+}
+h1 {
+  margin: 1.3rem 0rem;
+  align-self: flex-start;
+  color: white;
+  &:hover {
+    color: $head-color;
+  }
+}
+
+p {
+  font-size: $paragraph;
+
+  color: $content-color;
+}
+.price-expiry {
+  @include flex(center, center, row);
+  padding: 2rem 0rem;
+  position: relative;
+  flex-wrap: nowrap;
+  img {
+    margin-right: 1rem;
+  }
+}
+.price {
+  @include flex(center, center, row);
+  align-self: flex-start;
+  position: absolute;
+  left: 0;
+}
+.expiry {
+  @include flex(center, center, row);
+  align-self: stretch;
+  position: absolute;
+  right: 0;
+}
+
+span {
+  width: 25rem;
+  height: 0.15rem;
+
+  background: $line-color;
+  margin: 1.2rem auto;
+  display: block;
+}
+.cc {
+  @include flex(flex-start, space-between, row);
+  img {
+    align-self: flex-start;
+    justify-content: flex-start;
+    padding-right: 1.2rem;
+    width: 15%;
+  }
+}
+a:hover {
+  color: $head-color;
+}
+@media (min-width: 375px) and (max-width: 1440px) {
+  body {
+    font-size: 115%;
+  }
+}

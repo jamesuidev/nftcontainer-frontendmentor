@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* So 1 rem becomes 10px */
+
+html {
+  font-size: 62.5%;
+}
+body {
+  background: $bg-main;
+  font-family: "Outfit" sans-serif;
+}
+.attribution {
+  width: 30rem;
+  margin: auto;
+  font-size: 2rem;
+  min-height: 100vh;
+  text-align: center;
+  color: white;
+  @include flex(center, center, row);
+}
+.nftcontainer {
+  background: $bg-card;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  font-size: $paragraph;
+  color: $content-color;
+}
+h2 {
+  color: $head-color;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
