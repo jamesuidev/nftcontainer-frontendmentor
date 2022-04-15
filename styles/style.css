@@ -35,6 +35,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-transform: translateX(-30%);
+          transform: translateX(-30%);
 }
 
 .nftcontainer {
@@ -273,6 +275,10 @@ a:hover {
 @media (min-width: 375px) and (max-width: 1440px) {
   body {
     font-size: 115%;
+  }
+  .nftcontainer {
+    margin-left: calc(3rem + 1vw);
+    margin-right: calc(3rem + 1vw);
   }
 }
 /*# sourceMappingURL=style.css.map */
